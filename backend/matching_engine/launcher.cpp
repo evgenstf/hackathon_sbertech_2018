@@ -1,4 +1,7 @@
-#include "orderbook.h"
+#include "order_book/order_book.h"
+#include "quote/quote.h"
+#include "order/order.h"
+
 #include <iostream>
 
 void print_direction(const NExchange::OrderBook::DirectionType& direction) {
