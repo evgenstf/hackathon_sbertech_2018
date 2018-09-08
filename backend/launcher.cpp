@@ -4,12 +4,15 @@
 using namespace std;
 
 int main() {
-  auto server = build_server(5001);
+  size_t port;
+  cout << "enter port number: ";
+  cin >> port;
+  auto server = build_server(port);
 
   thread server_thread([&server]() {
     server->start();
   });
-  clog << "server has been started\n";
+  clog << "server has been started at port: " << port << '\n';
 
   server_thread.join();
   return 0;
